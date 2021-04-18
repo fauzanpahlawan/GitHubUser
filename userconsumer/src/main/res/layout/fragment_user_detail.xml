@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="userDetailViewModel"
+            type="com.example.userconsumer.ui.detail.UserDetailViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/user_detail_fragment_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.detail.UserDetailFragment">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_user_avatar"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:layout_marginTop="16dp"
+            android:transitionName="@{userDetailViewModel.user.avatar_url}"
+            app:avatar="@{userDetailViewModel.user.avatar_url}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_person_black" />
+
+        <TextView
+            android:id="@+id/tv_user_login"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:text='@{userDetailViewModel.user.login}'
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:transitionName="@{userDetailViewModel.user.login}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_user_avatar"
+            tools:text="@string/user_login" />
+
+        <TextView
+            android:id="@+id/tv_user_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/empty_text"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_user_login"
+            app:textAlternative="@{@string/user_name_unspecified}"
+            app:textValue="@{userDetailViewModel.user.name}"
+            tools:text="@string/user_name" />
+
+        <TextView
+            android:id="@+id/tv_public_repos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:drawablePadding="4dp"
+            android:text="@string/empty_text"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:drawableStartCompat="@drawable/ic_repository_black_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_user_name"
+            app:numberLabelMillions="@{@string/number_label_millions}"
+            app:numberLabelThousands="@{@string/number_label_thousands}"
+            app:numberProperties="@{@string/user_public_repos}"
+            app:numberSimplified="@{userDetailViewModel.user.public_repos}"
+            tools:text="@string/user_public_repos" />
+
+        <TextView
+            android:id="@+id/tv_user_company"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:drawablePadding="4dp"
+            android:text="@string/empty_text"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:drawableStartCompat="@drawable/ic_company_black_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_public_repos"
+            app:textAlternative="@{@string/user_company_unspecified}"
+            app:textValue="@{userDetailViewModel.user.company}"
+            tools:text="@string/user_company" />
+
+        <TextView
+            android:id="@+id/tv_user_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:drawablePadding="4dp"
+            android:text="@string/empty_text"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:drawableStartCompat="@drawable/ic_location_black_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_user_company"
+            app:layout_constraintVertical_bias="0.0"
+            app:textAlternative="@{@string/user_location_unspecified}"
+            app:textValue="@{userDetailViewModel.user.location}"
+            tools:text="@string/user_location" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/follow_view_pager"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/follow_tabs" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/follow_tabs"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_user_location" />
+
+        <ImageButton
+            android:id="@+id/btn_fav"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@string/img_button_fav_desc"
+            android:onClick="@{()-> userDetailViewModel.onFavClicked()}"
+            android:visibility="visible"
+            app:isFav="@{userDetailViewModel.isFavorite}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="user_name">Nama</string>
+    <string name="user_login">Nama Pengguna</string>
+    <string name="user_location">Lokasi</string>
+    <string name="user_company">Perusahaan</string>
+    <string name="user_public_repos">Repositori</string>
+    <string name="user_company_unspecified">Tidak ditemukan</string>
+    <string name="user_location_unspecified">Tidak ditemukan</string>
+    <string name="search_title">Cari</string>
+    <string name="search_hint">Ketik Nama Pengguna, contoh: JakeWharton</string>
+    <string name="retry">Coba Kembali</string>
+    <string name="network_error">Tidak dapat terhubung. Cek kemabli koneksi internet anda.</string>
+    <string name="tab_1">Pengikut %1$s</string>
+    <string name="tab_2">Mengikuti  %1$s</string>
+    <string name="favorite_title">Favorit</string>
+    <string name="setting_title">Pengaturan</string>
+    <string name="add_favorite">%1$s ditambahkan ke favorit</string>
+    <string name="remove_favorite">%1$s dihapus dari favorit</string>
+    <string name="empty_favorite_indicator">Masih Kosong :(</string>
+    <string name="add_to_favorite_indicator">Tambahkan pengguna favoritmu ke sini</string>
+    <string name="header_language">Bahasa</string>
+    <string name="header_notification">Notifikasi</string>
+    <string name="title_language">Ganti Bahasa Perangkat</string>
+    <string name="summary_language">Bahasa saat ini: %1$s</string>
+    <string name="title_notification_pref">Aktifkan notifikasi</string>
+    <string name="summary_on_notification_pref">Anda akan menerima notifikasi setiap hari pada pukul 09:00 AM</string>
+    <string name="summary_off_notification_pref">Anda tidak akan menerima notifikasi setiap hari pada pukul 09:00 AM</string>
+    <string name="notification_title">Temukan seorang pengguna!</string>
+    <string name="notification_message">Ayo cari seorang developer yang keren di GitHub sebagai inspirasi!</string>
+    <string name="favorite_fragment_label">Favorit</string>
+    <string name="settings_fragment_label">Pengaturan</string>
+    <string name="tv_filter_empty">Mohon tunggu kami carikan yang anda mau…</string>
+    <string name="tv_search_empty">Tidak ada pengguna dengan username itu :(</string>
+    <string name="empty_text">Tidak Ada Data</string>
+    <string name="img_view_widget_desc">Image View Avatar Pengguna</string>
+</resources>

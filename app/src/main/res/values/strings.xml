@@ -1,0 +1,72 @@
+<resources>
+    <string name="app_name" translatable="false">GithubUser</string>
+    <string name="snackBar_ok" translatable="false">OK</string>
+
+    <string name="user_name">Name</string>
+    <string name="user_login">User Name</string>
+    <string name="user_location">Location</string>
+    <string name="user_company">Company</string>
+    <string name="user_public_repos">Repositories</string>
+    <string name="user_name_unspecified" translatable="false">-</string>
+    <string name="user_company_unspecified">Not specified</string>
+    <string name="user_location_unspecified">Not specified</string>
+    <string name="number_label_thousands" translatable="false">K</string>
+    <string name="number_label_millions" translatable="false">M</string>
+    <string name="search_hint">Type User Name e.g. JakeWharton..</string>
+    <string name="retry">Retry</string>
+    <string name="network_error">Unable to resolve host. Please check your internet connection.</string>
+
+    <!--    fragment labels-->
+    <string name="home_fragment_label" translatable="false">Home</string>
+    <string name="favorite_fragment_label">Favorite</string>
+    <string name="settings_fragment_label">Settings</string>
+
+    <!--    menu title-->
+    <string name="search_title">Search</string>
+    <string name="favorite_title">Favorite</string>
+    <string name="setting_title">Settings</string>
+
+    <!--    tab layout-->
+    <string name="tab_1">Followers %1$s</string>
+    <string name="tab_2">Following %1$s</string>
+
+    <!--    title-->
+
+    <!--    description-->
+    <string name="img_loading_desc" translatable="false">close views until loaded</string>
+    <string name="img_button_fav_desc" translatable="false">image button for favorite</string>
+
+    <string name="empty_favorite_indicator">Such empty :(</string>
+    <string name="add_to_favorite_indicator">Add some user to favorite.</string>
+    <string name="add_favorite">%1$s added to favorite</string>
+    <string name="remove_favorite">%1$s removed from favorite</string>
+
+    <!-- Preference Titles -->
+    <string name="header_language">Language</string>
+    <string name="header_notification">Notification</string>
+
+    <!-- Language Preferences -->
+    <string name="title_language">Change Device Language</string>
+    <string name="key_language" translatable="false">language_preference</string>
+    <string name="summary_language">Current language: %1$s</string>
+
+    <!-- Notification Preferences -->
+    <string name="title_notification_pref">Receive Notification</string>
+    <string name="key_notification_pref" translatable="false">notification_preference</string>
+    <string name="summary_on_notification_pref">You will receive notification everyday at 09:00 AM</string>
+    <string name="summary_off_notification_pref">You will not receive notification everyday at 09:00 AM</string>
+
+    <!--    Notification-->
+    <string name="notification_title">Find a user!</string>
+    <string name="notification_message">Let\'s find some cool developers on GitHub and be inspired!</string>
+
+    <!--    indicator-->
+    <string name="tv_filter_empty">Please wait we are finding what you want…</string>
+    <string name="tv_search_empty">No users found :(</string>
+
+    <!--    default-->
+
+    <!--    widget-->
+    <string name="empty_text">No Data</string>
+    <string name="img_view_widget_desc">User Avatar Image View</string>
+</resources>

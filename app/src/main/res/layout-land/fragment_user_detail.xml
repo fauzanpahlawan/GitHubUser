@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="userDetailViewModel"
+            type="com.example.githubuser.ui.detail.UserDetailViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/user_detail_fragment_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.detail.UserDetailFragment">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_user_avatar"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:transitionName="@{userDetailViewModel.userAvatarUrl}"
+            app:avatar="@{userDetailViewModel.userAvatarUrl}"
+            app:layout_constraintBottom_toTopOf="@+id/tv_user_login"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_follow"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_person_black" />
+
+        <TextView
+            android:id="@+id/tv_user_login"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text='@{userDetailViewModel.userLogin}'
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:transitionName="@{userDetailViewModel.userLogin}"
+            app:layout_constraintBottom_toTopOf="@+id/tv_user_name"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_follow"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_user_avatar"
+            tools:text="@string/user_login" />
+
+        <TextView
+            android:id="@+id/tv_user_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/empty_text"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_public_repos"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_follow"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_user_login"
+            app:textAlternative="@{@string/user_name_unspecified}"
+            app:textValue="@{userDetailViewModel.user.name}"
+            tools:text="@string/user_name" />
+
+        <TextView
+            android:id="@+id/tv_public_repos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:drawablePadding="4dp"
+            android:text="@string/empty_text"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:drawableStartCompat="@drawable/ic_repository_black_24"
+            app:layout_constraintBottom_toTopOf="@+id/tv_user_company"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_follow"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_user_name"
+            app:numberLabelMillions="@{@string/number_label_millions}"
+            app:numberLabelThousands="@{@string/number_label_thousands}"
+            app:numberProperties="@{@string/user_public_repos}"
+            app:numberSimplified="@{userDetailViewModel.user.public_repos}"
+            tools:text="@string/user_public_repos" />
+
+        <TextView
+            android:id="@+id/tv_user_company"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:drawablePadding="4dp"
+            android:text="@string/empty_text"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:drawableStartCompat="@drawable/ic_company_black_24"
+            app:layout_constraintBottom_toTopOf="@+id/tv_user_location"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_follow"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_public_repos"
+            app:textAlternative="@{@string/user_company_unspecified}"
+            app:textValue="@{userDetailViewModel.user.company}"
+            tools:text="@string/user_company" />
+
+        <TextView
+            android:id="@+id/tv_user_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:drawablePadding="4dp"
+            android:text="@string/empty_text"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:drawableStartCompat="@drawable/ic_location_black_24"
+            app:layout_constraintBottom_toTopOf="@+id/img_loading_1"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_follow"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_user_company"
+            app:textAlternative="@{@string/user_location_unspecified}"
+            app:textValue="@{userDetailViewModel.user.location}"
+            tools:text="@string/user_location" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/follow_tabs"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline_follow"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/follow_view_pager"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline_follow"
+            app:layout_constraintTop_toBottomOf="@+id/follow_tabs" />
+
+        <ImageView
+            android:id="@+id/img_loading_1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@string/img_loading_desc"
+            android:visibility="@{userDetailViewModel.showLoadingImg ? View.VISIBLE : View.INVISIBLE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_follow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_user_name"
+            app:srcCompat="@drawable/bg_img_loading"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/img_loading_2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@string/img_loading_desc"
+            android:visibility="@{userDetailViewModel.showLoadingImg? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline_follow"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/bg_img_loading"
+            tools:visibility="visible" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="@{userDetailViewModel.isLoading? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="gone" />
+
+        <Button
+            android:id="@+id/btn_retry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{()-> userDetailViewModel.loadUser()}"
+            android:text="@string/retry"
+            android:visibility="@{userDetailViewModel.showRetry? View.VISIBLE: View.INVISIBLE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="gone" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_follow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.35" />
+
+        <ImageButton
+            android:id="@+id/btn_fav"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:contentDescription="@string/img_button_fav_desc"
+            android:onClick="@{()->userDetailViewModel.onFavClicked()}"
+            android:visibility="@{userDetailViewModel.showLoadingImg? View.GONE : View.VISIBLE}"
+            app:isFav="@{userDetailViewModel.isFavorite}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

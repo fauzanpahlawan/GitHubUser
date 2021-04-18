@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">GitHubUser Consumer</string>
+
+    <string name="snackBar_ok" translatable="false">OK</string>
+
+    <string name="empty_text" translatable="false"> </string>
+    <string name="user_name">Name</string>
+    <string name="user_login">User Name</string>
+    <string name="user_location">Location</string>
+    <string name="user_company">Company</string>
+    <string name="user_public_repos">Repositories</string>
+    <string name="user_name_unspecified" translatable="false">-</string>
+    <string name="user_company_unspecified">Not specified</string>
+    <string name="user_location_unspecified">Not specified</string>
+    <string name="number_label_thousands" translatable="false">K</string>
+    <string name="number_label_millions" translatable="false">M</string>
+    <string name="search_hint">Type User Name e.g. JakeWharton..</string>
+    <string name="network_error">Unable to resolve host. Please check your internet connection.</string>
+    <string name="retry">Retry</string>
+
+    <!--    fragment title-->
+    <string name="home_fragment_label" translatable="false">Home</string>
+
+    <!--    menu title-->
+    <string name="search_title">Search</string>
+
+    <!--    tab layout-->
+    <string name="tab_1">Followers %1$s</string>
+    <string name="tab_2">Following %1$s</string>
+
+    <!--    title-->
+
+    <!--    description-->
+    <string name="img_button_fav_desc" translatable="false">image button for favorite</string>
+
+    <string name="remove_favorite">%1$s removed from favorite</string>
+
+    <!--    indicator-->
+    <string name="tv_filter_empty">No users found :(</string>
+</resources>

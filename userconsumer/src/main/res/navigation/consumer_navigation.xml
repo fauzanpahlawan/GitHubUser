@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.userconsumer.ui.home.HomeFragment"
+        android:label="@string/home_fragment_label">
+        <action
+            android:id="@+id/homeToDetail"
+            app:destination="@id/userDetailFragment"
+            app:exitAnim="@anim/to_left"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"
+            app:popUpTo="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userDetailFragment"
+        android:name="com.example.userconsumer.ui.detail.UserDetailFragment"
+        android:label="{userLogin}">
+        <argument
+            android:name="user"
+            app:argType="com.example.userconsumer.data.model.User" />
+        <argument
+            android:name="userLogin"
+            android:defaultValue="null"
+            app:argType="string" />
+        <action
+            android:id="@+id/detailToHome"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left"
+            app:popUpTo="@id/homeFragment" />
+    </fragment>
+</navigation>

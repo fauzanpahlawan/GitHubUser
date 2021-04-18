@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.githubuser.ui.home.HomeFragment"
+        android:label="@string/home_fragment_label"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/homeToDetail"
+            app:destination="@id/userDetail"
+            app:exitAnim="@anim/to_left"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"
+            app:popUpTo="@id/homeFragment" />
+        <action
+            android:id="@+id/homeToFavorite"
+            app:destination="@id/favoriteFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"
+            app:popUpTo="@id/homeFragment" />
+        <action
+            android:id="@+id/homeToSettings"
+            app:destination="@id/gitHubUserSettingsFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"
+            app:popUpTo="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userDetail"
+        android:name="com.example.githubuser.ui.detail.UserDetailFragment"
+        android:label="{userLogin}"
+        tools:layout="@layout/fragment_user_detail">
+        <argument
+            android:name="user"
+            app:argType="com.example.githubuser.data.model.User" />
+        <argument
+            android:name="userLogin"
+            android:defaultValue="null"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.example.githubuser.ui.favorite.FavoriteFragment"
+        android:label="@string/favorite_fragment_label">
+        <action
+            android:id="@+id/favoriteToDetailFavorite"
+            app:destination="@id/favDetailFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"
+            app:popUpTo="@id/favoriteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gitHubUserSettingsFragment"
+        android:name="com.example.githubuser.ui.settings.GitHubUserSettingsFragment"
+        android:label="@string/settings_fragment_label" />
+    <fragment
+        android:id="@+id/favDetailFragment"
+        android:name="com.example.githubuser.ui.favdetail.FavDetailFragment"
+        android:label="{userLogin}"
+        tools:layout="@layout/fav_detail_fragment">
+        <argument
+            android:name="user"
+            app:argType="com.example.githubuser.data.model.User" />
+        <argument
+            android:name="userLogin"
+            app:argType="string"
+            android:defaultValue="null" />
+    </fragment>
+</navigation>
