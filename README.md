@@ -5,7 +5,7 @@
  
  <img src="images/home.jpg" width=300>
  
- Tap magnifier and enter keyword to search
+ Tap "magnifier button" and enter keyword to search
  
  <img src="images/search.jpg" width=300>
  
@@ -13,6 +13,6 @@
  
  <img src="images/user.jpg" width=300>
  
- In detail page each user can be added to favorite by tapping the favorite button and can be accessed throught favorite menu
+ In detail page each user can be added to favorite by tapping the "hoolow heart button" and can be accessed throught favorite menu by tapping the "full heart button"
  
  <img src="images/favorite.jpg" width=300>
