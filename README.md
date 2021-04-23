@@ -13,6 +13,6 @@
  
  <img src="images/user.jpg" width=300>
  
- In detail page each user can be added to favorite by tapping the "hoolow heart button" and can be accessed throught favorite menu by tapping the "full heart button"
+ In detail page each user can be added to favorite by tapping the "hollow heart button" and can be accessed throught favorite menu by tapping the "full heart button"
  
  <img src="images/favorite.jpg" width=300>
