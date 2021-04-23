@@ -5,13 +5,13 @@
  
  <img src="images/home.jpg" width=300>
  
- Tap one of the cards to show more informations
- 
- <img src="images/user.jpg" width=300>
- 
  Tap magnifier and enter keyword to search
  
  <img src="images/search.jpg" width=300>
+ 
+ Tap one of the cards to show more informations
+ 
+ <img src="images/user.jpg" width=300>
  
  In detail page each user can be added to favorite by tapping the favorite button and can be accessed throught favorite menu
  
